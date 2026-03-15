@@ -1,0 +1,242 @@
+body {
+    background: #1abc9c;
+    font-family: Tahoma, Arial, sans-serif;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+.header img {
+    display: block;
+    width: 318px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.archive-content,
+.article-content {
+    width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.one-post {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.post-title a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.article-author {
+    width: 50%;
+    float: left;
+}
+
+.article-created-date {
+    text-align: right;
+}
+
+.article-info::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.article-text {
+    margin-top: 20px;
+    line-height: 1.5;
+}
+
+.back-link a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.top-links {
+    width: 960px;
+    margin: 0 auto 20px auto;
+    text-align: right;
+}
+
+.top-links a,
+.top-links a:visited,
+.top-links a:link {
+    color: #ffffff;
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.top-links a:hover {
+    text-decoration: underline;
+}
+
+.fold-button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.one-post.folded .article-author,
+.one-post.folded .article-created-date,
+.one-post.folded .article-text {
+    display: none;
+}
+
+.one-post {
+    position: relative;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid rgba(44, 62, 80, 0.12);
+    margin-bottom: 30px;
+    padding: 20px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease, background 0.3s ease;
+}
+
+.one-post-shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #16a085;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1;
+    transition: opacity 0.3s ease;
+}
+
+.one-post > * {
+    position: relative;
+    z-index: 2;
+}
+
+.header img.logo {
+    display: block;
+    width: 318px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+body.archive {
+    background: #f4f6f8;
+    color: #2c3e50;
+}
+
+.header {
+    background: #16a085;
+    min-height: 530px;
+    overflow: hidden;
+    position: relative;
+}
+
+.header-text-area {
+    position: absolute;
+    left: 120px;
+    top: 60px;
+    width: 360px;
+    z-index: 5;
+}
+
+.header-text-area .logo {
+    display: block;
+    width: 220px;
+    height: auto;
+    margin: 0 0 20px 0;
+}
+
+.blog-description {
+    color: #ffffff;
+    font-size: 32px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.top-links {
+    text-align: left;
+    width: auto;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.top-links a,
+.top-links a:link,
+.top-links a:visited,
+.top-links a:hover,
+.top-links a:active {
+    color: #ffffff;
+    margin-right: 20px;
+    text-decoration: none;
+    font-size: 18px;
+    white-space: nowrap;
+}
+
+.top-links a:hover {
+    text-decoration: underline;
+}
+
+.icons-for-parallax {
+    position: absolute;
+    right: 180px;
+    top: 80px;
+    width: 420px;
+    height: 320px;
+}
+
+.icons-for-parallax img {
+    position: absolute;
+    height: auto;
+}
+
+.icon-for-parallax-first {
+    width: 200px;
+    top: 120px;
+    left: 0;
+    z-index: 3;
+}
+
+.icon-for-parallax-second {
+    width: 175px;
+    top: 50px;
+    left: 120px;
+    z-index: 2;
+}
+
+.icon-for-parallax-third {
+    width: 150px;
+    top: 0;
+    left: 230px;
+    z-index: 1;
+}
+
+.archive-content {
+    width: 960px;
+    margin: 0 auto;
+    padding-top: 40px;
+    color: #2c3e50;
+}
+
+.archive-content h1 {
+    color: #2c3e50;
+}
+
+.archive-content .post-title a,
+.archive-content .article-author,
+.archive-content .article-created-date,
+.archive-content .article-text {
+    color: #2c3e50;
+}
