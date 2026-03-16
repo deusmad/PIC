@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import Http404
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.models import User
 from .models import Article
 
 
@@ -72,3 +73,33 @@ def user_login(request):
 def user_logout(request):
     logout(request)
     return redirect("archive")
+
+def user_register(request):
+    if request.method == "POST":
+        form = {
+            "username": request.POST.get("username", "").strip(),
+            "password": request.POST.get("password", ""),
+            "password2": request.POST.get("password2", "")
+        }
+
+        if not form["username"] or not form["password"] or not form["password2"]:
+            form["errors"] = "Не все поля заполнены"
+            return render(request, "register.html", {"form": form})
+
+        if form["password"] != form["password2"]:
+            form["errors"] = "Пароли не совпадают"
+            return render(request, "register.html", {"form": form})
+
+        if User.objects.filter(username=form["username"]).exists():
+            form["errors"] = "Пользователь с таким логином уже существует"
+            return render(request, "register.html", {"form": form})
+
+        user = User.objects.create_user(
+            username=form["username"],
+            password=form["password"]
+        )
+
+        login(request, user)
+        return redirect("archive")
+
+    return render(request, "register.html", {})

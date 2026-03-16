@@ -40,6 +40,9 @@ def print_students(students):
     print("\n")
 
 
+# print_students(groupmates)
+
+
 def stud_filter_average_score(students: list[dict], score: int) -> list:
     """Stud filter avg."""
     passed_stud = []
@@ -55,4 +58,3 @@ def stud_filter_average_score(students: list[dict], score: int) -> list:
 passed_stud = stud_filter_average_score(groupmates, 4)
 
 print_students(passed_stud)
-print_students(groupmates)
