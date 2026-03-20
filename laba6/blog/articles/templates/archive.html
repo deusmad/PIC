@@ -8,15 +8,16 @@
 </head>
 <body class="archive">
     <div class="header">
-        <img src="{% static 'img/dpb-logo.png' %}" alt="Логотип">
+        <img src="{% static 'img/dj.png' %}" alt="Логотип">
     </div>
 
     <div class="top-links">
         {% if request.user.is_authenticated %}
-            <a href="/article/new/">Написать статью</a>
-            <a href="/logout/">Выйти ({{ request.user.username }})</a>
+            <a href="{% url 'create_post' %}">Написать статью</a>
+            <a href="{% url 'logout' %}">Выйти ({{ request.user.username }})</a>
         {% else %}
-            <a href="/login/">Войти</a>
+            <a href="{% url 'login' %}">Войти</a>
+            <a href="{% url 'registration' %}">Регистрация</a>
         {% endif %}
     </div>
 
@@ -26,14 +27,14 @@
         {% for post in posts %}
             <div class="one-post">
                 <h2 class="post-title">
-                    <a href="/article/{{ post.id }}/">{{ post.title }}</a>
+                    <a href="{% url 'get_article' post.pk %}">{{ post.title }}</a>
                 </h2>
                 <div class="article-info">
-                    <p class="article-author">Автор: {{ post.author.username }}</p>
-                    <p class="article-created-date">Дата: {{ post.created_date }}</p>
+                    <div class="article-author">{{ post.author.username }}</div>
+                    <div class="article-createddate">{{ post.created_date }}</div>
+                </div>    
+                <p class="article-text">{{ post.get_excerpt }}</p>
                 </div>
-                <p class="article-text">{{ post.text }}</p>
-            </div>
         {% endfor %}
     </div>
 </body>

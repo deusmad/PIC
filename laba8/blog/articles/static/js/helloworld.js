@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    // Сворачивание и разворачивание постов
     $('.fold-button').on('click', function () {
         var button = $(this);
         var post = button.parents('.one-post');
@@ -13,7 +12,6 @@ $(document).ready(function () {
         }
     });
 
-    // Подсветка поста при наведении
     $('.one-post').hover(
         function (event) {
             $(event.currentTarget)
@@ -29,7 +27,6 @@ $(document).ready(function () {
         }
     );
 
-    // Эффект для логотипа
     $('.logo').hover(
         function () {
             $(this).stop(true).animate({ width: '338px' }, 300);

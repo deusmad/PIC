@@ -5,6 +5,6 @@ from articles import views
 urlpatterns = [
     path('', views.archive, name='archive'),
     path('admin/', admin.site.urls),
-    path('article/<int:pk>/', views.get_article, name='get_article')
+    path('article/<int:article_id>/', views.get_article, name='get_article')
 
 ]

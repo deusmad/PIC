@@ -10,7 +10,6 @@
     <div class="header">
         <div class="header-text-area">
             <img class="logo" src="{% static 'img/dj.png' %}" alt="Логотип">
-            <h2 class="blog-description">Коллективный блог</h2>
 
             <div class="top-links">
                 {% if request.user.is_authenticated %}
@@ -55,6 +54,7 @@
     </div>
 
     <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/helloworld_students.js' %}"></script>
     <script src="{% static 'js/helloworld.js' %}"></script>
     <script src="{% static 'js/parallax.js' %}"></script>
 </body>
